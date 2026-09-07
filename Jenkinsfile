@@ -1,7 +1,8 @@
 pipeline{
     agent any
     tools{
-        java 'jdk8'
+        jdk 'jdk8'
+        maven 'maven3'
     }
     stages{
         stage('checkjava version'){
@@ -11,7 +12,7 @@ pipeline{
         }
         stage('build'){
             steps{
-               bat 'mvn clean build'
+               bat 'mvn clean install'
             }
         }
     }
