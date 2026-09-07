@@ -1,6 +1,8 @@
 pipeline{
     agent any
-  
+      tools{
+        jdk 'jdk25'
+      }
     
     stages{
         stage('checkjava version'){
