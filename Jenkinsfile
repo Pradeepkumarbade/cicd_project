@@ -1,6 +1,8 @@
 pipeline{
-    agent 
-    label 'ubuntu'
+    agent {
+        label 'ubuntu'
+    }
+    
       tools{
         jdk '21'
       }
