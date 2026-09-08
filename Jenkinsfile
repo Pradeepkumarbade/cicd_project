@@ -1,5 +1,6 @@
 pipeline{
-    agent any
+    agent 
+    label 'ubuntu'
       tools{
         jdk '21'
       }
@@ -7,14 +8,15 @@ pipeline{
     stages{
         stage('checkjava version'){
             steps{
-                bat 'java -version'
+                sh 'java -version'
                 
         
             }
         }
         stage('build'){
             steps{
-               bat 'gradle clean build'
+                sh './chmod +x gradlew'
+                sh '.gradlew build'
             }
         }
     }
