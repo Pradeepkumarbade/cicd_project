@@ -1,7 +1,7 @@
 pipeline{
     agent any
       tools{
-        jdk '25'
+        jdk '21'
       }
     
     stages{
@@ -14,7 +14,7 @@ pipeline{
         }
         stage('build'){
             steps{
-               bat 'gradlew.bat clean build'
+               bat 'gradle clean build'
             }
         }
     }
